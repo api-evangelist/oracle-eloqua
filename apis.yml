@@ -1,0 +1,108 @@
+aid: oracle-eloqua
+name: Oracle Eloqua
+description: >-
+  Oracle Eloqua is a B2B marketing automation platform within Oracle Marketing
+  Cloud that enables marketers to plan and execute multi-channel campaigns,
+  manage leads, and personalize customer engagement across email, web, mobile,
+  and social channels. The platform provides campaign design, lead scoring,
+  segmentation, landing pages, and form processing for B2B demand generation
+  teams. Oracle Eloqua exposes pod-specific REST APIs (Application API and
+  Bulk API) authenticated via OAuth 2.0 or HTTP Basic Authentication, with
+  base URLs resolved per-customer from the login.eloqua.com /id endpoint.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Marketing Automation
+  - B2B Marketing
+  - Email Marketing
+  - Campaign Management
+  - Lead Management
+  - Oracle
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/oracle-eloqua/refs/heads/main/apis.yml
+created: '2026-05-11'
+modified: '2026-05-11'
+specificationVersion: '0.19'
+apis:
+  - aid: oracle-eloqua:application-api
+    name: Oracle Eloqua Application REST API
+    description: >-
+      REST API for managing Eloqua marketing assets, contacts, accounts,
+      campaigns, emails, forms, landing pages, and custom data objects.
+      Base URL is pod-specific and resolved from the /id endpoint; supports
+      OAuth 2.0 and HTTP Basic Authentication.
+    humanURL: >-
+      https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/index.html
+    baseURL: https://secure.p01.eloqua.com/API/REST/2.0
+    tags:
+      - Marketing Automation
+      - Campaigns
+      - Contacts
+      - Email Marketing
+    properties:
+      - type: Documentation
+        url: >-
+          https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/index.html
+      - type: Authentication
+        url: >-
+          https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/Authentication_Auth.html
+      - type: Getting Started
+        url: >-
+          https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCAB/Developers/GettingStarted/Tutorials/determining-base-URLs.htm
+  - aid: oracle-eloqua:bulk-api
+    name: Oracle Eloqua Bulk API
+    description: >-
+      High-volume import/export REST API for moving large datasets of
+      contacts, accounts, custom objects, and activities in and out of
+      Eloqua. Uses the same OAuth 2.0 and HTTP Basic Authentication as the
+      Application API.
+    humanURL: >-
+      https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/index.html
+    baseURL: https://secure.p01.eloqua.com/API/Bulk/2.0
+    tags:
+      - Bulk Data
+      - Data Import
+      - Data Export
+      - Marketing Automation
+    properties:
+      - type: Documentation
+        url: >-
+          https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/index.html
+
+common:
+  - type: Website
+    url: https://www.oracle.com/cx/marketing/automation/
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/marketing/eloqua-develop/
+  - type: Pricing
+    url: https://www.oracle.com/cx/marketing/automation/
+  - type: Sign Up
+    url: https://login.eloqua.com/
+features:
+  - name: Campaign Management
+    description: >-
+      Design and execute multi-step, multi-channel B2B marketing campaigns
+      with branching logic and decision rules.
+  - name: Lead Scoring and Nurturing
+    description: >-
+      Score leads based on profile and engagement criteria and route
+      qualified leads to sales via CRM integration.
+  - name: Email Marketing
+    description: >-
+      Send personalized emails with dynamic content, A/B testing, and
+      deliverability tooling for B2B audiences.
+  - name: Forms and Landing Pages
+    description: >-
+      Build forms and landing pages that capture leads and feed
+      Eloqua segmentation, scoring, and campaign workflows.
+  - name: Custom Data Objects
+    description: >-
+      Model custom business data alongside standard contact and account
+      records for advanced segmentation and personalization.
+  - name: Bulk Data API
+    description: >-
+      Move large volumes of records into and out of Eloqua via the
+      dedicated Bulk API endpoints.
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
