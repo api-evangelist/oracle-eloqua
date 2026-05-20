@@ -70,6 +70,8 @@ apis:
           https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/index.html
 
 common:
+  - type: GitHubOrganization
+    url: https://github.com/oracle
   - type: Website
     url: https://www.oracle.com/cx/marketing/automation/
   - type: Documentation
