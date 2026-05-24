@@ -1,0 +1,440 @@
+openapi: 3.1.0
+info:
+  title: Oracle Eloqua REST API
+  description: |
+    Oracle Eloqua REST APIs for the Oracle Marketing B2B marketing
+    automation platform. Two API surfaces are covered:
+
+    - The **Application API** at `/api/rest/2.0/` for managing assets and
+      data (contacts, accounts, campaigns, emails, forms, custom objects).
+    - The **Bulk API** at `/api/bulk/2.0/` for high-volume imports,
+      exports, and sync operations.
+
+    Both surfaces share the same authentication. The base URL is
+    pod-specific and resolved at runtime per customer from the
+    `https://login.eloqua.com/id` discovery endpoint. Authentication is
+    OAuth 2.0 Bearer tokens (Authorization Code, Implicit, or Resource
+    Owner Password grants) or HTTP Basic Authentication using
+    `client_id:client_secret`.
+  version: "2.0.0"
+  contact:
+    name: Oracle Eloqua
+    url: https://www.oracle.com/cx/marketing/automation/
+servers:
+  - url: https://{pod}.eloqua.com
+    description: Customer's Eloqua pod (e.g. secure.p01.eloqua.com).
+    variables:
+      pod:
+        default: secure.p01
+        description: The pod-specific subdomain returned by the /id discovery call.
+security:
+  - bearerAuth: []
+  - basicAuth: []
+tags:
+  - name: Contacts
+    description: Manage contact records and list membership.
+  - name: Accounts
+    description: Manage account records.
+  - name: Campaigns
+    description: Manage marketing campaign assets.
+  - name: Emails
+    description: Manage email assets and deployments.
+  - name: Forms
+    description: Manage forms and form submission data.
+  - name: Bulk
+    description: Bulk import/export and sync operations.
+paths:
+  /api/rest/2.0/data/contacts:
+    post:
+      tags: [Contacts]
+      summary: Retrieve contact information
+      operationId: searchContacts
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "200":
+          description: Contact search payload.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Collection'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+  /api/rest/2.0/data/contact/{id}:
+    parameters:
+      - $ref: '#/components/parameters/IdParam'
+    get:
+      tags: [Contacts]
+      summary: Retrieve a contact
+      operationId: getContact
+      responses:
+        "200":
+          description: Contact resource.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+        "404":
+          $ref: '#/components/responses/NotFound'
+    put:
+      tags: [Contacts]
+      summary: Update a contact
+      operationId: updateContact
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "200":
+          description: Updated contact.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+  /api/rest/2.0/data/accounts:
+    post:
+      tags: [Accounts]
+      summary: Retrieve account information
+      operationId: searchAccounts
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "200":
+          description: Account search payload.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Collection'
+  /api/rest/2.0/data/account/{id}:
+    parameters:
+      - $ref: '#/components/parameters/IdParam'
+    get:
+      tags: [Accounts]
+      summary: Retrieve an account
+      operationId: getAccount
+      responses:
+        "200":
+          description: Account resource.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+  /api/rest/2.0/assets/campaigns:
+    get:
+      tags: [Campaigns]
+      summary: List campaigns
+      operationId: listCampaigns
+      responses:
+        "200":
+          description: Campaigns collection.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Collection'
+  /api/rest/2.0/assets/campaign:
+    post:
+      tags: [Campaigns]
+      summary: Create a campaign
+      operationId: createCampaign
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "201":
+          description: Campaign created.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+  /api/rest/2.0/assets/campaign/{id}:
+    parameters:
+      - $ref: '#/components/parameters/IdParam'
+    get:
+      tags: [Campaigns]
+      summary: Retrieve a campaign
+      operationId: getCampaign
+      responses:
+        "200":
+          description: Campaign resource.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+  /api/rest/2.0/assets/emails:
+    get:
+      tags: [Emails]
+      summary: List emails
+      operationId: listEmails
+      responses:
+        "200":
+          description: Emails collection.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Collection'
+  /api/rest/2.0/assets/email:
+    post:
+      tags: [Emails]
+      summary: Create an email
+      operationId: createEmail
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "201":
+          description: Email created.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+  /api/rest/2.0/assets/email/{id}:
+    parameters:
+      - $ref: '#/components/parameters/IdParam'
+    get:
+      tags: [Emails]
+      summary: Retrieve an email
+      operationId: getEmail
+      responses:
+        "200":
+          description: Email resource.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+  /api/rest/2.0/assets/email/deployment:
+    post:
+      tags: [Emails]
+      summary: Create email deployment
+      operationId: createEmailDeployment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "201":
+          description: Deployment created.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+  /api/rest/2.0/assets/form/{id}:
+    parameters:
+      - $ref: '#/components/parameters/IdParam'
+    get:
+      tags: [Forms]
+      summary: Retrieve a form
+      operationId: getForm
+      responses:
+        "200":
+          description: Form resource.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+  /api/rest/2.0/data/form/{id}:
+    parameters:
+      - $ref: '#/components/parameters/IdParam'
+    get:
+      tags: [Forms]
+      summary: Retrieve form submissions
+      operationId: getFormSubmissions
+      responses:
+        "200":
+          description: Form submissions.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Collection'
+    post:
+      tags: [Forms]
+      summary: Submit form data
+      operationId: createFormData
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "201":
+          description: Form data created.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+  /api/bulk/2.0/contacts/exports:
+    post:
+      tags: [Bulk]
+      summary: Create a bulk contacts export definition
+      operationId: createContactExport
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "201":
+          description: Export definition created.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+  /api/bulk/2.0/contacts/imports:
+    post:
+      tags: [Bulk]
+      summary: Create a bulk contacts import definition
+      operationId: createContactImport
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "201":
+          description: Import definition created.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+  /api/bulk/2.0/syncs:
+    post:
+      tags: [Bulk]
+      summary: Create a bulk sync
+      operationId: createBulkSync
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "201":
+          description: Sync created.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+  /api/bulk/2.0/syncs/{id}:
+    parameters:
+      - $ref: '#/components/parameters/IdParam'
+    get:
+      tags: [Bulk]
+      summary: Retrieve sync status
+      operationId: getBulkSync
+      responses:
+        "200":
+          description: Sync status.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: |
+        OAuth 2.0 access token obtained from
+        `https://login.eloqua.com/auth/oauth2/token`. Sent as
+        `Authorization: Bearer {access_token}`.
+    basicAuth:
+      type: http
+      scheme: basic
+      description: |
+        HTTP Basic Authentication with `client_id:client_secret`. Used at
+        the token endpoint and as a legacy fallback.
+  parameters:
+    IdParam:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Resource ID.
+  responses:
+    Unauthorized:
+      description: Missing or invalid credentials.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    NotFound:
+      description: Resource not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+  schemas:
+    Collection:
+      type: object
+      properties:
+        elements:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+        page:
+          type: integer
+        pageSize:
+          type: integer
+        total:
+          type: integer
+    ErrorResponse:
+      type: object
+      properties:
+        type:
+          type: string
+        title:
+          type: string
+        detail:
+          type: string
+        errorCode:
+          type: string
+externalDocs:
+  description: Oracle Eloqua REST API Documentation
+  url: https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/index.html
