@@ -1,0 +1,2424 @@
+{
+  "item": [
+    {
+      "id": "cb317002-aec7-4370-94fd-ceb38d8c6492",
+      "name": "Contacts",
+      "description": {
+        "content": "Manage contact records and list membership.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "cd5dfe31-1826-4618-b21e-df8e371b4684",
+          "name": "Retrieve contact information",
+          "request": {
+            "name": "Retrieve contact information",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "rest",
+                "2.0",
+                "data",
+                "contacts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The pod-specific subdomain returned by the /id discovery call.",
+                  "type": "any",
+                  "value": "{{pod}}",
+                  "key": "pod"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"key_0\": 2681.6840282628787,\n  \"key_1\": 894.4152272675454,\n  \"key_2\": \"string\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "408b4502-f44f-4fb6-a4b6-b8161b35bebf",
+              "name": "Contact search payload.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "rest",
+                    "2.0",
+                    "data",
+                    "contacts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The pod-specific subdomain returned by the /id discovery call.",
+                      "type": "any",
+                      "value": "{{pod}}",
+                      "key": "pod"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"key_0\": true,\n  \"key_1\": 6959,\n  \"key_2\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"elements\": [\n    {\n      \"key_0\": 6429.087818871779,\n      \"key_1\": \"string\"\n    },\n    {\n      \"key_0\": 3927\n    }\n  ],\n  \"page\": 886,\n  \"pageSize\": 5971,\n  \"total\": 9899\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d6d8ba86-607e-409c-8797-9d733dfd5905",
+              "name": "Missing or invalid credentials.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "rest",
+                    "2.0",
+                    "data",
+                    "contacts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The pod-specific subdomain returned by the /id discovery call.",
+                      "type": "any",
+                      "value": "{{pod}}",
+                      "key": "pod"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"key_0\": true,\n  \"key_1\": 6959,\n  \"key_2\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"detail\": \"string\",\n  \"errorCode\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "61fd6a06-24b6-41ec-99cf-7a789b732505",
+          "name": "Retrieve a contact",
+          "request": {
+            "name": "Retrieve a contact",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "rest",
+                "2.0",
+                "data",
+                "contact",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Resource ID."
+                },
+                {
+                  "description": "The pod-specific subdomain returned by the /id discovery call.",
+                  "type": "any",
+                  "value": "{{pod}}",
+                  "key": "pod"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7529361e-6a31-4953-a3bc-0c51626dc72d",
+              "name": "Contact resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "rest",
+                    "2.0",
+                    "data",
+                    "contact",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Resource ID."
+                    },
+                    {
+                      "description": "The pod-specific subdomain returned by the /id discovery call.",
+                      "type": "any",
+                      "value": "{{pod}}",
+                      "key": "pod"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"key_0\": true,\n  \"key_1\": 6959,\n  \"key_2\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a0393e35-394f-427b-b518-68bb56eef608",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "rest",
+                    "2.0",
+                    "data",
+                    "contact",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Resource ID."
+                    },
+                    {
+                      "description": "The pod-specific subdomain returned by the /id discovery call.",
+                      "type": "any",
+                      "value": "{{pod}}",
+                      "key": "pod"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"detail\": \"string\",\n  \"errorCode\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "88769b0d-659b-4278-b2ba-bda6214614e8",
+          "name": "Update a contact",
+          "request": {
+            "name": "Update a contact",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "rest",
+                "2.0",
+                "data",
+                "contact",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Resource ID."
+                },
+                {
+                  "description": "The pod-specific subdomain returned by the /id discovery call.",
+                  "type": "any",
+                  "value": "{{pod}}",
+                  "key": "pod"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"key_0\": 2681.6840282628787,\n  \"key_1\": 894.4152272675454,\n  \"key_2\": \"string\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "84c1f674-69c6-4481-859c-2e6b59e46d6e",
+              "name": "Updated contact.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "rest",
+                    "2.0",
+                    "data",
+                    "contact",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Resource ID."
+                    },
+                    {
+                      "description": "The pod-specific subdomain returned by the /id discovery call.",
+                      "type": "any",
+                      "value": "{{pod}}",
+                      "key": "pod"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"key_0\": true,\n  \"key_1\": 6959,\n  \"key_2\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"key_0\": true,\n  \"key_1\": 6959,\n  \"key_2\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "f9a37e55-a020-485f-9b07-28941081d8d5",
+      "name": "Accounts",
+      "description": {
+        "content": "Manage account records.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "67012b9a-e553-434f-86d0-eb53c857df7b",
+          "name": "Retrieve account information",
+          "request": {
+            "name": "Retrieve account information",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "rest",
+                "2.0",
+                "data",
+                "accounts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The pod-specific subdomain returned by the /id discovery call.",
+                  "type": "any",
+                  "value": "{{pod}}",
+                  "key": "pod"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"key_0\": 2681.6840282628787,\n  \"key_1\": 894.4152272675454,\n  \"key_2\": \"string\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "cf5090f9-f127-4592-9d87-37b5da1832d2",
+              "name": "Account search payload.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "rest",
+                    "2.0",
+                    "data",
+                    "accounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The pod-specific subdomain returned by the /id discovery call.",
+                      "type": "any",
+                      "value": "{{pod}}",
+                      "key": "pod"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"key_0\": true,\n  \"key_1\": 6959,\n  \"key_2\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"elements\": [\n    {\n      \"key_0\": 6429.087818871779,\n      \"key_1\": \"string\"\n    },\n    {\n      \"key_0\": 3927\n    }\n  ],\n  \"page\": 886,\n  \"pageSize\": 5971,\n  \"total\": 9899\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e9892a15-e628-495e-9907-98532d26be89",
+          "name": "Retrieve an account",
+          "request": {
+            "name": "Retrieve an account",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "rest",
+                "2.0",
+                "data",
+                "account",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Resource ID."
+                },
+                {
+                  "description": "The pod-specific subdomain returned by the /id discovery call.",
+                  "type": "any",
+                  "value": "{{pod}}",
+                  "key": "pod"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "77424dc3-025d-4230-b63a-7736485418ca",
+              "name": "Account resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "rest",
+                    "2.0",
+                    "data",
+                    "account",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Resource ID."
+                    },
+                    {
+                      "description": "The pod-specific subdomain returned by the /id discovery call.",
+                      "type": "any",
+                      "value": "{{pod}}",
+                      "key": "pod"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"key_0\": true,\n  \"key_1\": 6959,\n  \"key_2\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "42ca554a-f128-45e5-a4bd-bae480bf0850",
+      "name": "Campaigns",
+      "description": {
+        "content": "Manage marketing campaign assets.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5e63ca68-ba08-4c9f-ab7a-0de280f8ba1b",
+          "name": "List campaigns",
+          "request": {
+            "name": "List campaigns",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "rest",
+                "2.0",
+                "assets",
+                "campaigns"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The pod-specific subdomain returned by the /id discovery call.",
+                  "type": "any",
+                  "value": "{{pod}}",
+                  "key": "pod"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5fa2edfc-cc9b-4308-8a0a-fa6ad653e898",
+              "name": "Campaigns collection.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "rest",
+                    "2.0",
+                    "assets",
+                    "campaigns"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The pod-specific subdomain returned by the /id discovery call.",
+                      "type": "any",
+                      "value": "{{pod}}",
+                      "key": "pod"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"elements\": [\n    {\n      \"key_0\": 6429.087818871779,\n      \"key_1\": \"string\"\n    },\n    {\n      \"key_0\": 3927\n    }\n  ],\n  \"page\": 886,\n  \"pageSize\": 5971,\n  \"total\": 9899\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "90c1cc8c-a6ba-4922-a5f8-b7d2ae7d84d9",
+          "name": "Create a campaign",
+          "request": {
+            "name": "Create a campaign",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "rest",
+                "2.0",
+                "assets",
+                "campaign"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The pod-specific subdomain returned by the /id discovery call.",
+                  "type": "any",
+                  "value": "{{pod}}",
+                  "key": "pod"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"key_0\": 2681.6840282628787,\n  \"key_1\": 894.4152272675454,\n  \"key_2\": \"string\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e0aceaa4-0cae-4897-99d7-7e27cda84479",
+              "name": "Campaign created.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "rest",
+                    "2.0",
+                    "assets",
+                    "campaign"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The pod-specific subdomain returned by the /id discovery call.",
+                      "type": "any",
+                      "value": "{{pod}}",
+                      "key": "pod"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"key_0\": true,\n  \"key_1\": 6959,\n  \"key_2\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"key_0\": true,\n  \"key_1\": 6959,\n  \"key_2\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e1b108a1-c48d-4758-b702-ad79d88ebf30",
+          "name": "Retrieve a campaign",
+          "request": {
+            "name": "Retrieve a campaign",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "rest",
+                "2.0",
+                "assets",
+                "campaign",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Resource ID."
+                },
+                {
+                  "description": "The pod-specific subdomain returned by the /id discovery call.",
+                  "type": "any",
+                  "value": "{{pod}}",
+                  "key": "pod"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "771f29d4-fc97-4d6b-a2fc-24a63daa3797",
+              "name": "Campaign resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "rest",
+                    "2.0",
+                    "assets",
+                    "campaign",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Resource ID."
+                    },
+                    {
+                      "description": "The pod-specific subdomain returned by the /id discovery call.",
+                      "type": "any",
+                      "value": "{{pod}}",
+                      "key": "pod"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"key_0\": true,\n  \"key_1\": 6959,\n  \"key_2\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "27609ba8-5eac-4243-93ad-4ff77b4f93e4",
+      "name": "Emails",
+      "description": {
+        "content": "Manage email assets and deployments.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9d576e17-44cc-4bdf-856d-ddcaf3e58aac",
+          "name": "List emails",
+          "request": {
+            "name": "List emails",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "rest",
+                "2.0",
+                "assets",
+                "emails"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The pod-specific subdomain returned by the /id discovery call.",
+                  "type": "any",
+                  "value": "{{pod}}",
+                  "key": "pod"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ffeee233-3bb9-4528-b149-b5da8831f9ac",
+              "name": "Emails collection.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "rest",
+                    "2.0",
+                    "assets",
+                    "emails"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The pod-specific subdomain returned by the /id discovery call.",
+                      "type": "any",
+                      "value": "{{pod}}",
+                      "key": "pod"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"elements\": [\n    {\n      \"key_0\": 6429.087818871779,\n      \"key_1\": \"string\"\n    },\n    {\n      \"key_0\": 3927\n    }\n  ],\n  \"page\": 886,\n  \"pageSize\": 5971,\n  \"total\": 9899\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4b4b7bcb-f496-4230-b366-e96019a12f93",
+          "name": "Create an email",
+          "request": {
+            "name": "Create an email",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "rest",
+                "2.0",
+                "assets",
+                "email"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The pod-specific subdomain returned by the /id discovery call.",
+                  "type": "any",
+                  "value": "{{pod}}",
+                  "key": "pod"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"key_0\": 2681.6840282628787,\n  \"key_1\": 894.4152272675454,\n  \"key_2\": \"string\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d3b0764b-2fa5-46fa-959d-74a629eaa63a",
+              "name": "Email created.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "rest",
+                    "2.0",
+                    "assets",
+                    "email"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The pod-specific subdomain returned by the /id discovery call.",
+                      "type": "any",
+                      "value": "{{pod}}",
+                      "key": "pod"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"key_0\": true,\n  \"key_1\": 6959,\n  \"key_2\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"key_0\": true,\n  \"key_1\": 6959,\n  \"key_2\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "12a043ad-86e1-479a-b10c-533833ba46b2",
+          "name": "Retrieve an email",
+          "request": {
+            "name": "Retrieve an email",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "rest",
+                "2.0",
+                "assets",
+                "email",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Resource ID."
+                },
+                {
+                  "description": "The pod-specific subdomain returned by the /id discovery call.",
+                  "type": "any",
+                  "value": "{{pod}}",
+                  "key": "pod"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "35b61e97-9956-4c97-b121-da84e69f69ac",
+              "name": "Email resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "rest",
+                    "2.0",
+                    "assets",
+                    "email",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Resource ID."
+                    },
+                    {
+                      "description": "The pod-specific subdomain returned by the /id discovery call.",
+                      "type": "any",
+                      "value": "{{pod}}",
+                      "key": "pod"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"key_0\": true,\n  \"key_1\": 6959,\n  \"key_2\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0b4700f7-3529-4924-8599-501f27282ffb",
+          "name": "Create email deployment",
+          "request": {
+            "name": "Create email deployment",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "rest",
+                "2.0",
+                "assets",
+                "email",
+                "deployment"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The pod-specific subdomain returned by the /id discovery call.",
+                  "type": "any",
+                  "value": "{{pod}}",
+                  "key": "pod"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"key_0\": 2681.6840282628787,\n  \"key_1\": 894.4152272675454,\n  \"key_2\": \"string\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4e846f32-8bf0-4056-af4c-47cda38976cb",
+              "name": "Deployment created.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "rest",
+                    "2.0",
+                    "assets",
+                    "email",
+                    "deployment"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The pod-specific subdomain returned by the /id discovery call.",
+                      "type": "any",
+                      "value": "{{pod}}",
+                      "key": "pod"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"key_0\": true,\n  \"key_1\": 6959,\n  \"key_2\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"key_0\": true,\n  \"key_1\": 6959,\n  \"key_2\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "f23f0eba-cc9d-4ebb-baa9-ffc1dd73fde5",
+      "name": "Forms",
+      "description": {
+        "content": "Manage forms and form submission data.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "38c8d704-2642-4751-ac58-157871bf271b",
+          "name": "Retrieve a form",
+          "request": {
+            "name": "Retrieve a form",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "rest",
+                "2.0",
+                "assets",
+                "form",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Resource ID."
+                },
+                {
+                  "description": "The pod-specific subdomain returned by the /id discovery call.",
+                  "type": "any",
+                  "value": "{{pod}}",
+                  "key": "pod"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c52e8708-5f22-46fd-8e58-41636705b847",
+              "name": "Form resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "rest",
+                    "2.0",
+                    "assets",
+                    "form",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Resource ID."
+                    },
+                    {
+                      "description": "The pod-specific subdomain returned by the /id discovery call.",
+                      "type": "any",
+                      "value": "{{pod}}",
+                      "key": "pod"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"key_0\": true,\n  \"key_1\": 6959,\n  \"key_2\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "23804329-635a-44a8-b01d-dc8e7fbe2f83",
+          "name": "Retrieve form submissions",
+          "request": {
+            "name": "Retrieve form submissions",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "rest",
+                "2.0",
+                "data",
+                "form",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Resource ID."
+                },
+                {
+                  "description": "The pod-specific subdomain returned by the /id discovery call.",
+                  "type": "any",
+                  "value": "{{pod}}",
+                  "key": "pod"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e05aa86f-a121-4c0a-b356-ce9e8d6c470f",
+              "name": "Form submissions.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "rest",
+                    "2.0",
+                    "data",
+                    "form",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Resource ID."
+                    },
+                    {
+                      "description": "The pod-specific subdomain returned by the /id discovery call.",
+                      "type": "any",
+                      "value": "{{pod}}",
+                      "key": "pod"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"elements\": [\n    {\n      \"key_0\": 6429.087818871779,\n      \"key_1\": \"string\"\n    },\n    {\n      \"key_0\": 3927\n    }\n  ],\n  \"page\": 886,\n  \"pageSize\": 5971,\n  \"total\": 9899\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3ba66df2-b6df-4760-bc34-4e2c33c2f2be",
+          "name": "Submit form data",
+          "request": {
+            "name": "Submit form data",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "rest",
+                "2.0",
+                "data",
+                "form",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Resource ID."
+                },
+                {
+                  "description": "The pod-specific subdomain returned by the /id discovery call.",
+                  "type": "any",
+                  "value": "{{pod}}",
+                  "key": "pod"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"key_0\": 2681.6840282628787,\n  \"key_1\": 894.4152272675454,\n  \"key_2\": \"string\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "153060f5-560a-47a2-a96c-8d24441a248e",
+              "name": "Form data created.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "rest",
+                    "2.0",
+                    "data",
+                    "form",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Resource ID."
+                    },
+                    {
+                      "description": "The pod-specific subdomain returned by the /id discovery call.",
+                      "type": "any",
+                      "value": "{{pod}}",
+                      "key": "pod"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"key_0\": true,\n  \"key_1\": 6959,\n  \"key_2\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"key_0\": true,\n  \"key_1\": 6959,\n  \"key_2\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "b15b5f83-2e86-4fe2-afc6-28a812bff923",
+      "name": "Bulk",
+      "description": {
+        "content": "Bulk import/export and sync operations.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "20e76b23-0149-4c26-bad5-e36b9534be0e",
+          "name": "Create a bulk contacts export definition",
+          "request": {
+            "name": "Create a bulk contacts export definition",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "bulk",
+                "2.0",
+                "contacts",
+                "exports"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The pod-specific subdomain returned by the /id discovery call.",
+                  "type": "any",
+                  "value": "{{pod}}",
+                  "key": "pod"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"key_0\": 2681.6840282628787,\n  \"key_1\": 894.4152272675454,\n  \"key_2\": \"string\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "dc9056f5-1ff4-431e-bb59-c0af4d5957cb",
+              "name": "Export definition created.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "bulk",
+                    "2.0",
+                    "contacts",
+                    "exports"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The pod-specific subdomain returned by the /id discovery call.",
+                      "type": "any",
+                      "value": "{{pod}}",
+                      "key": "pod"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"key_0\": true,\n  \"key_1\": 6959,\n  \"key_2\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"key_0\": true,\n  \"key_1\": 6959,\n  \"key_2\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dab21403-1a16-40e3-8c09-28bf49e2d67a",
+          "name": "Create a bulk contacts import definition",
+          "request": {
+            "name": "Create a bulk contacts import definition",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "bulk",
+                "2.0",
+                "contacts",
+                "imports"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The pod-specific subdomain returned by the /id discovery call.",
+                  "type": "any",
+                  "value": "{{pod}}",
+                  "key": "pod"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"key_0\": 2681.6840282628787,\n  \"key_1\": 894.4152272675454,\n  \"key_2\": \"string\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "69513b97-a242-4541-ab6d-363d5206536f",
+              "name": "Import definition created.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "bulk",
+                    "2.0",
+                    "contacts",
+                    "imports"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The pod-specific subdomain returned by the /id discovery call.",
+                      "type": "any",
+                      "value": "{{pod}}",
+                      "key": "pod"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"key_0\": true,\n  \"key_1\": 6959,\n  \"key_2\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"key_0\": true,\n  \"key_1\": 6959,\n  \"key_2\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6c23fd92-9fe8-4142-ad5d-5cbd314f16df",
+          "name": "Create a bulk sync",
+          "request": {
+            "name": "Create a bulk sync",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "bulk",
+                "2.0",
+                "syncs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The pod-specific subdomain returned by the /id discovery call.",
+                  "type": "any",
+                  "value": "{{pod}}",
+                  "key": "pod"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"key_0\": 2681.6840282628787,\n  \"key_1\": 894.4152272675454,\n  \"key_2\": \"string\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7448d74a-358a-40c2-a662-25f49686e695",
+              "name": "Sync created.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "bulk",
+                    "2.0",
+                    "syncs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The pod-specific subdomain returned by the /id discovery call.",
+                      "type": "any",
+                      "value": "{{pod}}",
+                      "key": "pod"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"key_0\": true,\n  \"key_1\": 6959,\n  \"key_2\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"key_0\": true,\n  \"key_1\": 6959,\n  \"key_2\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e5752911-a575-4e49-8767-276a6afd2a20",
+          "name": "Retrieve sync status",
+          "request": {
+            "name": "Retrieve sync status",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "bulk",
+                "2.0",
+                "syncs",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Resource ID."
+                },
+                {
+                  "description": "The pod-specific subdomain returned by the /id discovery call.",
+                  "type": "any",
+                  "value": "{{pod}}",
+                  "key": "pod"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8baa15e5-9c76-4e6d-a3c8-375a450db211",
+              "name": "Sync status.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "bulk",
+                    "2.0",
+                    "syncs",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Resource ID."
+                    },
+                    {
+                      "description": "The pod-specific subdomain returned by the /id discovery call.",
+                      "type": "any",
+                      "value": "{{pod}}",
+                      "key": "pod"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"key_0\": true,\n  \"key_1\": 6959,\n  \"key_2\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "The pod-specific subdomain returned by the /id discovery call.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "secure.p01",
+      "key": "pod"
+    },
+    {
+      "type": "string",
+      "value": "https://{{pod}}.eloqua.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "4a5bd3f5-d53a-4635-a1e6-9383ec302955",
+    "name": "Oracle Eloqua REST API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Oracle Eloqua REST APIs for the Oracle Marketing B2B marketing\nautomation platform. Two API surfaces are covered:\n\n- The **Application API** at `/api/rest/2.0/` for managing assets and\n  data (contacts, accounts, campaigns, emails, forms, custom objects).\n- The **Bulk API** at `/api/bulk/2.0/` for high-volume imports,\n  exports, and sync operations.\n\nBoth surfaces share the same authentication. The base URL is\npod-specific and resolved at runtime per customer from the\n`https://login.eloqua.com/id` discovery endpoint. Authentication is\nOAuth 2.0 Bearer tokens (Authorization Code, Implicit, or Resource\nOwner Password grants) or HTTP Basic Authentication using\n`client_id:client_secret`.\n\n\nContact Support:\n Name: Oracle Eloqua",
+      "type": "text/plain"
+    }
+  }
+}

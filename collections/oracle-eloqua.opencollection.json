@@ -1,0 +1,385 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Oracle Eloqua REST API",
+    "version": "2.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Contacts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve contact information",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{pod}.eloqua.com/api/rest/2.0/data/contacts",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Retrieve contact information"
+        },
+        {
+          "info": {
+            "name": "Retrieve a contact",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{pod}.eloqua.com/api/rest/2.0/data/contact/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Resource ID."
+              }
+            ]
+          },
+          "docs": "Retrieve a contact"
+        },
+        {
+          "info": {
+            "name": "Update a contact",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{pod}.eloqua.com/api/rest/2.0/data/contact/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Resource ID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a contact"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Accounts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve account information",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{pod}.eloqua.com/api/rest/2.0/data/accounts",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Retrieve account information"
+        },
+        {
+          "info": {
+            "name": "Retrieve an account",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{pod}.eloqua.com/api/rest/2.0/data/account/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Resource ID."
+              }
+            ]
+          },
+          "docs": "Retrieve an account"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Campaigns",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List campaigns",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{pod}.eloqua.com/api/rest/2.0/assets/campaigns"
+          },
+          "docs": "List campaigns"
+        },
+        {
+          "info": {
+            "name": "Create a campaign",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{pod}.eloqua.com/api/rest/2.0/assets/campaign",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a campaign"
+        },
+        {
+          "info": {
+            "name": "Retrieve a campaign",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{pod}.eloqua.com/api/rest/2.0/assets/campaign/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Resource ID."
+              }
+            ]
+          },
+          "docs": "Retrieve a campaign"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Emails",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List emails",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{pod}.eloqua.com/api/rest/2.0/assets/emails"
+          },
+          "docs": "List emails"
+        },
+        {
+          "info": {
+            "name": "Create an email",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{pod}.eloqua.com/api/rest/2.0/assets/email",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create an email"
+        },
+        {
+          "info": {
+            "name": "Retrieve an email",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{pod}.eloqua.com/api/rest/2.0/assets/email/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Resource ID."
+              }
+            ]
+          },
+          "docs": "Retrieve an email"
+        },
+        {
+          "info": {
+            "name": "Create email deployment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{pod}.eloqua.com/api/rest/2.0/assets/email/deployment",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create email deployment"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Forms",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve a form",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{pod}.eloqua.com/api/rest/2.0/assets/form/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Resource ID."
+              }
+            ]
+          },
+          "docs": "Retrieve a form"
+        },
+        {
+          "info": {
+            "name": "Retrieve form submissions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{pod}.eloqua.com/api/rest/2.0/data/form/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Resource ID."
+              }
+            ]
+          },
+          "docs": "Retrieve form submissions"
+        },
+        {
+          "info": {
+            "name": "Submit form data",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{pod}.eloqua.com/api/rest/2.0/data/form/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Resource ID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Submit form data"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Bulk",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a bulk contacts export definition",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{pod}.eloqua.com/api/bulk/2.0/contacts/exports",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a bulk contacts export definition"
+        },
+        {
+          "info": {
+            "name": "Create a bulk contacts import definition",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{pod}.eloqua.com/api/bulk/2.0/contacts/imports",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a bulk contacts import definition"
+        },
+        {
+          "info": {
+            "name": "Create a bulk sync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{pod}.eloqua.com/api/bulk/2.0/syncs",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a bulk sync"
+        },
+        {
+          "info": {
+            "name": "Retrieve sync status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{pod}.eloqua.com/api/bulk/2.0/syncs/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Resource ID."
+              }
+            ]
+          },
+          "docs": "Retrieve sync status"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
