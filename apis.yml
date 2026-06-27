@@ -78,7 +78,7 @@ common:
     url: https://docs.oracle.com/en/cloud/saas/marketing/eloqua-develop/
   - type: Pricing
     url: https://www.oracle.com/cx/marketing/automation/
-  - type: SignUp
+  - type: Signup
     url: https://login.eloqua.com/
 features:
   - name: Campaign Management
