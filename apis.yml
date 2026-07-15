@@ -70,6 +70,8 @@ apis:
           https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/index.html
 
 common:
+  - type: AgenticAccess
+    url: agentic-access/oracle-eloqua-agentic-access.yml
   - type: DomainSecurity
     url: security/oracle-eloqua-domain-security.yml
   - type: Authentication
